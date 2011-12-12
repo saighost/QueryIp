@@ -1,0 +1,7 @@
+{ "name" :            "QueryIp"
+, "description" :     "Query the location of ip."
+, "keywords" :        ["Query", "ip", "location"]
+, "version" :         "0.1"
+, "author" :          "Saighost <saighost@qq.com>"              
+, "main":             "./index.js"
+}
