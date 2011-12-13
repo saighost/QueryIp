@@ -119,7 +119,7 @@ function number2ip(num){
 	part[1] = (num & 16711680) >> 16;
 	part[2] = (num & 65280) >> 8;
 	part[3] =  num & 255;
-	return part.join(".");
+	return part;
 }
 
 function getNextRange(part){
