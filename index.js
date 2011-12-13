@@ -91,12 +91,12 @@ function isInRange(data,start){
 		if(last<=max){
 			return ipAddress[index][1]+","+ipAddress[index][2];
 		}else{
-			return isInRang(data,getNextRange(endIp.split(".")));
+			return isInRange(data,getNextRange(endIp.split(".")));
 		}
 	}else{
 		start.pop();
 		var pre = getPreviousRange(start);
-		pre.push(0);
+		pre.push('0');
 		return isInRange(data,pre);
 	}
 	return "未知!";
