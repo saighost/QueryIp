@@ -66,8 +66,6 @@ http.createServer(function (req, res) {
 	}
 	res.end();
 	
-	res.end();
-	
 }).listen(80, "127.0.0.1");
     
 function queryIp(data){
@@ -115,10 +113,10 @@ function ip2number(data){
 
 function number2ip(num){
 	var part = new Array();
-	part[0] = (num & 4278190080) >> 24;
-	part[1] = (num & 16711680) >> 16;
-	part[2] = (num & 65280) >> 8;
-	part[3] =  num & 255;
+	part[0] = ((num & 4278190080) >> 24).toString();
+	part[1] = ((num & 16711680) >> 16).toString();
+	part[2] = ((num & 65280) >> 8).toString();
+	part[3] = (num & 255).toString();
 	return part;
 }
 
