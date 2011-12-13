@@ -101,7 +101,6 @@ function isInRange(data,start){
 }
 // num = (a<<24)|(b<<16)|(c<<8)|d;
 function ip2number(data){
-	if()
 	var part = data.split(".");
 	part.reverse();
 	var num = part[0];
