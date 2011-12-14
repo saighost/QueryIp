@@ -35,7 +35,7 @@ http.createServer(function (req, res) {
 	res.writeHead(200, {"content-type":"text/html;charset=utf8"});
 	
 	if (req.url == "/max") {
-		res.end("{'max':'"+max+"'}");
+		res.end('{"max":"'+max+'"}');
 		return;
 	}
 	
@@ -49,17 +49,17 @@ http.createServer(function (req, res) {
 	
 	if(req.get("ip")){
         if(net.isIPv4(req.get("ip"))){
-            res.write("{'"+req.get("ip")+"':'"+queryIp(req.get("ip"))+"'}\n");
+            res.write('{“'+req.get("ip")+'“:"'+queryIp(req.get("ip"))+'"}\n');
 	    }else{
             res.write("获取的IP不正确:"+req.get("ip"));
 	    }
 		
 	}else if(net.isIPv4(remoteAddress)){
-		res.write("{'"+remoteAddress+"':'"+queryIp(remoteAddress)+"',");
-		res.write("'description':'加ip参数可以查询指定IP.如：http://queryip.cnodejs.net/?ip=123.123.123.123'}\n");
+		res.write('{“'+remoteAddress+"\":\""+queryIp(remoteAddress)+'",');
+		res.write('“description”:“加ip参数可以查询指定IP.如：queryip.cnodejs.net/?ip=123.123.123.123”}\n');
 	}else{
 		if(net.isIP(remoteAddress)){
-			res.write("{'Not find':'对不起,目前没有IPv6的数据.'}");
+			res.write('{”Not find“:”对不起,目前没有IPv6的数据."}');
 		}else{
 			res.write("获取的IP不正确:"+remoteAddress);
 		}
